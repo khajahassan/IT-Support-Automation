@@ -6,10 +6,15 @@ $InitialSpace = (Get-Volume -DriveLetter C).SizeRemaining
 
 Write-Host "--- Starting Disk Maintenance ---" -ForegroundColor Cyan
 
+# Clear User Temp Folder
 foreach ($Folder in $TempFolders) {
 	Write-Host "Cleaning: $Folder" -ForegroundColor Gray
 	Remove-Item -Path $Folder -Recurse -Force -ErrorAction SilentlyContinue
 }
+# Empty Recycle Bin
+# -ErrorAction SilentlyContinue ignores errors if the bin is already empty
+Write-Host "Emptying Recycle Bin..." -ForegroundColor Gray
+Clear-RecycleBin -Force -ErrorAction SilentlyContinue
 
 $FinalSpace = (Get-Volume -DriveLetter C).SizeRemaining
 $SpaceSaved = [math]::Round(($FinalSpace - $InitialSpace) / 1MB, 2)
