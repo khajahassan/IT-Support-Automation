@@ -35,14 +35,13 @@ This script automates the cleanup of temporary files for a single user profile t
 > **Use Case:** This is the "First Response" tool for a user reporting a slow workstation. It targets the most common area for "junk" file accumulation without requiring administrative elevation to other user profiles.
 
 ## Instructions
-1. *Download:* Copy the code from Get-SystemInfo.ps1.
+1. *Download:* Copy the code.
 2. *Open PowerShell:* Launch PowerShell with Administrative privileges.
 3. *Execution Policy:* If scripts are blocked by system security, run:
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-4. *Run:* Execute the script by typing .\Get-SystemInfo.ps1.
+4. *Run:* Execute the script by typing .\[filename from step 1].
 
 ---
 
 ## Updates in the |-line (Get it? | = pipe, so |-line = pipeline)
-- [ ] *Disk Maintenance Tool:* Automated clearing of %TEMP% folders and system logs to resolve performance issues.
 - [ ] *Network Connectivity Tester:* A script to ping the local gateway and external DNS to isolate connection drops.
