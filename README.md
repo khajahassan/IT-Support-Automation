@@ -27,6 +27,8 @@ I implemented the '| Out-Host' command at the end of each 'Get...' command. This
 Invoke-DiskMaintenance.ps1
 This script automates the cleanup of temporary files for a single user profile to resolve lag and free up storage space.
 
+## Recycle Bin Automation: Integrated Clear-RecycleBin with the -Force parameter to bypass manual confirmation prompts, ensuring a fully automated "one-click" experience.
+
 ### Key Features:
 * **Environment Variable Targeting:** Uses '$env:TEMP' to dynamically locate the active user's temporary folder regardless of their username.
 * **Safety First:** Includes '-ErrorAction SilentlyContinue' to ensure the script continues running even if specific files are currently locked by open applications.
