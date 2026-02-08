@@ -42,8 +42,3 @@ This script automates the cleanup of temporary files for a single user profile t
 3. *Execution Policy:* If scripts are blocked by system security, run:
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 4. *Run:* Execute the script by typing .\[filename from step 1].
-
----
-
-## Updates in the |-line (Get it? | = pipe, so |-line = pipeline)
-- [ ] *Network Connectivity Tester:* A script to ping the local gateway and external DNS to isolate connection drops.
