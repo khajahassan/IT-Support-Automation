@@ -4,6 +4,7 @@ PowerShell and Bash scripts used for streamlining help desk tasks.
 ##Table of Contents
 * [Script: Get-SystemInfo.ps1](#-featured-script-get-systeminfo-ps1)
 * [Script: Invoke-DiskMaintenance.ps1](#-maintenance-script-invoke-diskmaintenance-ps1)
+* [Network Health Tester (Test-NetworkHealth.ps1)](#-network-health-tester-test-networkhealth-ps1)
 * [Technical Deep-Dive: Console Output Logic](#-technical-deep-dive-console-output-logic)
 * [Usage Instructions]
 (#-how-to-use)
@@ -36,9 +37,18 @@ This script automates the cleanup of temporary files for a single user profile t
 
 > **Use Case:** This is the "First Response" tool for a user reporting a slow workstation. It targets the most common area for "junk" file accumulation without requiring administrative elevation to other user profiles.
 
+## Network Health Tester: Test-NetworkHealth.ps1A diagnostic tool that isolates where a network connection is failing by testing three specific hops.
+### Why this is effective:
+* **Automated Gateway Detection:** Instead of hardcoding an IP, the script finds the local router's address using `Get-NetRoute`.
+* **Layered Isolation:** It prevents "false alarms" by ensuring the local hardware is working before checking the internet.
+* **Rapid Triage:** Designed for Help Desk technicians to run via remote shell to identify if a ticket should be escalated to the Network Team or the ISP.
+
 ## Instructions
 1. *Download:* Copy the code.
 2. *Open PowerShell:* Launch PowerShell with Administrative privileges.
 3. *Execution Policy:* If scripts are blocked by system security, run:
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 4. *Run:* Execute the script by typing .\[filename from step 1].
+
+---
+
